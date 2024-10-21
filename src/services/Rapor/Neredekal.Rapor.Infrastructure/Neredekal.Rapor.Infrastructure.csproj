@@ -16,9 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\common\Neredekal.Common.Domain\Neredekal.Common.Domain.csproj" />
     <ProjectReference Include="..\Neredekal.Rapor.Application\Neredekal.Rapor.Application.csproj" />
-    <ProjectReference Include="..\Neredekal.Rapor.Domain\Neredekal.Rapor.Domain.csproj" />
   </ItemGroup>
 
 </Project>

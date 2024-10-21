@@ -10,9 +10,9 @@ namespace Neredekal.Rapor.Infrastructure.Persistence.Repositories
 {
     public class OutboxMessageRepository : IOutboxMessageRepository
     {
-        private readonly RaporDbContext _context;
+        private readonly ReportDbContext _context;
 
-        public OutboxMessageRepository(RaporDbContext context)
+        public OutboxMessageRepository(ReportDbContext context)
         {
             _context = context;
         }

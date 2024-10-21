@@ -16,7 +16,7 @@ namespace Neredekal.Rapor.Infrastructure
     {
         public static void AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<RaporDbContext>(options =>
+            services.AddDbContext<ReportDbContext>(options =>
             {
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
             });

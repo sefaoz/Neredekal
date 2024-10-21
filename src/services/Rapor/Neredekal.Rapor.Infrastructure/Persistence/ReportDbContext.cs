@@ -12,11 +12,11 @@ using Neredekal.Rapor.Infrastructure.Persistence.Configurations;
 
 namespace Neredekal.Rapor.Infrastructure.Persistence
 {
-    public class RaporDbContext : DbContext, IUnitOfWorks
+    public class ReportDbContext : DbContext, IUnitOfWorks
     {
         private readonly IMediator _mediator;
 
-        public RaporDbContext(DbContextOptions options,IMediator mediator) : base(options)
+        public ReportDbContext(DbContextOptions options,IMediator mediator) : base(options)
         {
             _mediator = mediator;
         }
