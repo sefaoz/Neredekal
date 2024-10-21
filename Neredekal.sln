@@ -3,9 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5FC00FE0-6BCF-4C22-979B-1FCEC404445A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{0F0DF3AA-6593-4BB0-B941-83BB11375421}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Common.Domain", "src\common\Neredekal.Common.Domain\Neredekal.Common.Domain.csproj", "{05E7B2C4-5D27-4E70-9CFB-8E68CB6D1A97}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05E7B2C4-5D27-4E70-9CFB-8E68CB6D1A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E7B2C4-5D27-4E70-9CFB-8E68CB6D1A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E7B2C4-5D27-4E70-9CFB-8E68CB6D1A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E7B2C4-5D27-4E70-9CFB-8E68CB6D1A97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F0DF3AA-6593-4BB0-B941-83BB11375421} = {5FC00FE0-6BCF-4C22-979B-1FCEC404445A}
+		{05E7B2C4-5D27-4E70-9CFB-8E68CB6D1A97} = {0F0DF3AA-6593-4BB0-B941-83BB11375421}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF969F45-276F-46B1-8555-B25237177AE5}
