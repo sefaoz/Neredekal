@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Hotel.Domain", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Hotel.Insfrastructure", "src\services\Hotel\Neredekal.Hotel.Insfrastructure\Neredekal.Hotel.Insfrastructure.csproj", "{39968444-FE72-4127-BE3E-034429080B16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Hotel.Application", "src\services\Hotel\Neredekal.Hotel.Application\Neredekal.Hotel.Application.csproj", "{1304730C-0C6C-464E-AC5A-145DBAA294B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{39968444-FE72-4127-BE3E-034429080B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39968444-FE72-4127-BE3E-034429080B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39968444-FE72-4127-BE3E-034429080B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1304730C-0C6C-464E-AC5A-145DBAA294B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1304730C-0C6C-464E-AC5A-145DBAA294B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1304730C-0C6C-464E-AC5A-145DBAA294B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1304730C-0C6C-464E-AC5A-145DBAA294B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{AC011D1F-ECA4-43F4-8235-267C7357617F} = {889F2689-D1C8-41A1-AC68-2377B16C7513}
 		{8623C183-9AD2-4E2D-B7F3-DDAF0E033451} = {AC011D1F-ECA4-43F4-8235-267C7357617F}
 		{39968444-FE72-4127-BE3E-034429080B16} = {AC011D1F-ECA4-43F4-8235-267C7357617F}
+		{1304730C-0C6C-464E-AC5A-145DBAA294B5} = {AC011D1F-ECA4-43F4-8235-267C7357617F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF969F45-276F-46B1-8555-B25237177AE5}
