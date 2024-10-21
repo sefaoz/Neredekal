@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Rapor.Infrastruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Rapor.Application", "src\services\Rapor\Neredekal.Rapor.Application\Neredekal.Rapor.Application.csproj", "{2A4B9292-75FA-4F93-B0FD-834F47603709}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Rapor.Api", "src\services\Rapor\Neredekal.Rapor.Api\Neredekal.Rapor.Api.csproj", "{002BE1D8-8A85-4323-996C-66C738F78333}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{2A4B9292-75FA-4F93-B0FD-834F47603709}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A4B9292-75FA-4F93-B0FD-834F47603709}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A4B9292-75FA-4F93-B0FD-834F47603709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{002BE1D8-8A85-4323-996C-66C738F78333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{002BE1D8-8A85-4323-996C-66C738F78333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{002BE1D8-8A85-4323-996C-66C738F78333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{002BE1D8-8A85-4323-996C-66C738F78333}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{8D44DBCD-977A-4CBF-85E0-F8E1278173DA} = {1756F071-2905-4962-8EFD-000B86085DED}
 		{E04E80DB-8C9D-46E6-B26D-F450AFB8681F} = {1756F071-2905-4962-8EFD-000B86085DED}
 		{2A4B9292-75FA-4F93-B0FD-834F47603709} = {1756F071-2905-4962-8EFD-000B86085DED}
+		{002BE1D8-8A85-4323-996C-66C738F78333} = {1756F071-2905-4962-8EFD-000B86085DED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF969F45-276F-46B1-8555-B25237177AE5}
