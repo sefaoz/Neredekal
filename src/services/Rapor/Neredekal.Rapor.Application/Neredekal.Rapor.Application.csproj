@@ -11,8 +11,4 @@
     <ProjectReference Include="..\Neredekal.Rapor.Domain\Neredekal.Rapor.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>

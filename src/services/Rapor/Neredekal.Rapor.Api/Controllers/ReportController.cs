@@ -1,12 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Neredekal.Rapor.Application.UseCase.RaporUseCases.Commands;
 
 namespace Neredekal.Rapor.Api.Controllers
 {
     public class ReportController : Controller
     {
-        public IActionResult Get()
+        private readonly IMediator _mediator;
+
+        public ReportController(IMediator mediator)
         {
-            return Ok();
+            _mediator = mediator;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create()
+        {
+            await _mediator.Send(new CreateReportDetailCommand());
+
+            return Accepted();
         }
     }
 }

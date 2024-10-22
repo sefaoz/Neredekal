@@ -17,7 +17,7 @@ namespace Neredekal.Rapor.Infrastructure.Persistence.Repositories
 
         public Task Create(ReportDetail reportDetail)
         {
-            throw new NotImplementedException();
+
         }
 
         public Task<ReportDetail> Get(Guid id)

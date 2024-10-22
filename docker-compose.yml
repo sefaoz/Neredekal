@@ -1,0 +1,35 @@
+services:
+  neredekal.hotel.api:
+    image: ${DOCKER_REGISTRY-}neredekalhotelapi
+    build:
+      context: .
+      dockerfile: src/services/Hotel/Neredekal.Hotel.Api/Dockerfile
+
+  neredekal.rapor.api:
+    image: ${DOCKER_REGISTRY-}neredekalraporapi
+    build:
+      context: .
+      dockerfile: src/services/Rapor/Neredekal.Rapor.Api/Dockerfile
+
+
+  neredekal.rapor.consumer:
+    image: ${DOCKER_REGISTRY-}neredekalraporconsumer
+    build:
+      context: .
+      dockerfile: src/services/Rapor/Neredekal.Rapor.Consumer/Dockerfile
+
+
+  neredekal.rapor.outboxworker:
+    image: ${DOCKER_REGISTRY-}neredekalraporoutboxworker
+    build:
+      context: .
+      dockerfile: src/services/Rapor/Neredekal.Rapor.OutboxWorker/Dockerfile
+
+  elasticsearch:
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.11.2
+
+  kibana:
+    container_name: kibana
+    image: docker.elastic.co/kibana/kibana:7.11.2
+

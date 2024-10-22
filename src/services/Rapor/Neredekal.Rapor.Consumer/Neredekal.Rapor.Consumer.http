@@ -1,0 +1,6 @@
+@Neredekal.Rapor.Consumer_HostAddress = http://localhost:5248
+
+GET {{Neredekal.Rapor.Consumer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -17,7 +17,7 @@ internal class Program
             {
                 services.AddDbContext<ReportDbContext>(options =>
                 {
-                    options.UseNpgsql("");
+                    options.UseNpgsql("Server=localhost;Port=5432;Database=hotelDb;User Id=postgres;Password=postgres");
                 });
 
                 services.AddScoped<IOutboxMessageRepository, OutboxMessageRepository>();

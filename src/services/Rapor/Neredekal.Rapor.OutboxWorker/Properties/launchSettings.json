@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Neredekal.Rapor.OutboxWorker": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

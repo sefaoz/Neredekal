@@ -1,0 +1,34 @@
+# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+# This stage is used when running from VS in fast mode (Default for Debug configuration)
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+USER app
+WORKDIR /app
+EXPOSE 8080
+EXPOSE 8081
+
+
+# This stage is used to build the service project
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY ["src/services/Rapor/Neredekal.Rapor.Consumer/Neredekal.Rapor.Consumer.csproj", "src/services/Rapor/Neredekal.Rapor.Consumer/"]
+COPY ["src/services/Rapor/Neredekal.Rapor.Application/Neredekal.Rapor.Application.csproj", "src/services/Rapor/Neredekal.Rapor.Application/"]
+COPY ["src/common/Neredekal.Common.Domain/Neredekal.Common.Domain.csproj", "src/common/Neredekal.Common.Domain/"]
+COPY ["src/services/Rapor/Neredekal.Rapor.Domain/Neredekal.Rapor.Domain.csproj", "src/services/Rapor/Neredekal.Rapor.Domain/"]
+COPY ["src/services/Rapor/Neredekal.Rapor.Infrastructure/Neredekal.Rapor.Infrastructure.csproj", "src/services/Rapor/Neredekal.Rapor.Infrastructure/"]
+RUN dotnet restore "./src/services/Rapor/Neredekal.Rapor.Consumer/Neredekal.Rapor.Consumer.csproj"
+COPY . .
+WORKDIR "/src/src/services/Rapor/Neredekal.Rapor.Consumer"
+RUN dotnet build "./Neredekal.Rapor.Consumer.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+# This stage is used to publish the service project to be copied to the final stage
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./Neredekal.Rapor.Consumer.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Neredekal.Rapor.Consumer.dll"]

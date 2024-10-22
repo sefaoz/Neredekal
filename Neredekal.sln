@@ -7,31 +7,35 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5FC00FE0-6BC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{0F0DF3AA-6593-4BB0-B941-83BB11375421}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Common.Domain", "src\common\Neredekal.Common.Domain\Neredekal.Common.Domain.csproj", "{05E7B2C4-5D27-4E70-9CFB-8E68CB6D1A97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neredekal.Common.Domain", "src\common\Neredekal.Common.Domain\Neredekal.Common.Domain.csproj", "{05E7B2C4-5D27-4E70-9CFB-8E68CB6D1A97}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{889F2689-D1C8-41A1-AC68-2377B16C7513}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hotel", "Hotel", "{AC011D1F-ECA4-43F4-8235-267C7357617F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Hotel.Domain", "src\services\Hotel\Neredekal.Hotel.Domain\Neredekal.Hotel.Domain.csproj", "{8623C183-9AD2-4E2D-B7F3-DDAF0E033451}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neredekal.Hotel.Domain", "src\services\Hotel\Neredekal.Hotel.Domain\Neredekal.Hotel.Domain.csproj", "{8623C183-9AD2-4E2D-B7F3-DDAF0E033451}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Hotel.Insfrastructure", "src\services\Hotel\Neredekal.Hotel.Insfrastructure\Neredekal.Hotel.Insfrastructure.csproj", "{39968444-FE72-4127-BE3E-034429080B16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neredekal.Hotel.Insfrastructure", "src\services\Hotel\Neredekal.Hotel.Insfrastructure\Neredekal.Hotel.Insfrastructure.csproj", "{39968444-FE72-4127-BE3E-034429080B16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Hotel.Application", "src\services\Hotel\Neredekal.Hotel.Application\Neredekal.Hotel.Application.csproj", "{1304730C-0C6C-464E-AC5A-145DBAA294B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neredekal.Hotel.Application", "src\services\Hotel\Neredekal.Hotel.Application\Neredekal.Hotel.Application.csproj", "{1304730C-0C6C-464E-AC5A-145DBAA294B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Hotel.Api", "src\services\Hotel\Neredekal.Hotel.Api\Neredekal.Hotel.Api.csproj", "{335C1249-86E8-4C86-B90E-30D1EC730D74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neredekal.Hotel.Api", "src\services\Hotel\Neredekal.Hotel.Api\Neredekal.Hotel.Api.csproj", "{335C1249-86E8-4C86-B90E-30D1EC730D74}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rapor", "Rapor", "{1756F071-2905-4962-8EFD-000B86085DED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Rapor.Domain", "src\services\Rapor\Neredekal.Rapor.Domain\Neredekal.Rapor.Domain.csproj", "{8D44DBCD-977A-4CBF-85E0-F8E1278173DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neredekal.Rapor.Domain", "src\services\Rapor\Neredekal.Rapor.Domain\Neredekal.Rapor.Domain.csproj", "{8D44DBCD-977A-4CBF-85E0-F8E1278173DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Rapor.Infrastructure", "src\services\Rapor\Neredekal.Rapor.Infrastructure\Neredekal.Rapor.Infrastructure.csproj", "{E04E80DB-8C9D-46E6-B26D-F450AFB8681F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neredekal.Rapor.Infrastructure", "src\services\Rapor\Neredekal.Rapor.Infrastructure\Neredekal.Rapor.Infrastructure.csproj", "{E04E80DB-8C9D-46E6-B26D-F450AFB8681F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Rapor.Application", "src\services\Rapor\Neredekal.Rapor.Application\Neredekal.Rapor.Application.csproj", "{2A4B9292-75FA-4F93-B0FD-834F47603709}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neredekal.Rapor.Application", "src\services\Rapor\Neredekal.Rapor.Application\Neredekal.Rapor.Application.csproj", "{2A4B9292-75FA-4F93-B0FD-834F47603709}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Rapor.Api", "src\services\Rapor\Neredekal.Rapor.Api\Neredekal.Rapor.Api.csproj", "{002BE1D8-8A85-4323-996C-66C738F78333}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neredekal.Rapor.Api", "src\services\Rapor\Neredekal.Rapor.Api\Neredekal.Rapor.Api.csproj", "{002BE1D8-8A85-4323-996C-66C738F78333}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Rapor.OutboxWorker", "src\services\Rapor\Neredekal.Rapor.OutboxWorker\Neredekal.Rapor.OutboxWorker.csproj", "{F9372155-256E-46B8-BAAB-EC8A1838ED06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neredekal.Rapor.OutboxWorker", "src\services\Rapor\Neredekal.Rapor.OutboxWorker\Neredekal.Rapor.OutboxWorker.csproj", "{F9372155-256E-46B8-BAAB-EC8A1838ED06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neredekal.Rapor.Consumer", "src\services\Rapor\Neredekal.Rapor.Consumer\Neredekal.Rapor.Consumer.csproj", "{376D866B-265E-45B9-ACCB-47C2C5337D05}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{01475873-F474-4645-9366-50DA804CF29E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +83,14 @@ Global
 		{F9372155-256E-46B8-BAAB-EC8A1838ED06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9372155-256E-46B8-BAAB-EC8A1838ED06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9372155-256E-46B8-BAAB-EC8A1838ED06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{376D866B-265E-45B9-ACCB-47C2C5337D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{376D866B-265E-45B9-ACCB-47C2C5337D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{376D866B-265E-45B9-ACCB-47C2C5337D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{376D866B-265E-45B9-ACCB-47C2C5337D05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01475873-F474-4645-9366-50DA804CF29E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01475873-F474-4645-9366-50DA804CF29E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01475873-F474-4645-9366-50DA804CF29E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01475873-F474-4645-9366-50DA804CF29E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +110,7 @@ Global
 		{2A4B9292-75FA-4F93-B0FD-834F47603709} = {1756F071-2905-4962-8EFD-000B86085DED}
 		{002BE1D8-8A85-4323-996C-66C738F78333} = {1756F071-2905-4962-8EFD-000B86085DED}
 		{F9372155-256E-46B8-BAAB-EC8A1838ED06} = {1756F071-2905-4962-8EFD-000B86085DED}
+		{376D866B-265E-45B9-ACCB-47C2C5337D05} = {1756F071-2905-4962-8EFD-000B86085DED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF969F45-276F-46B1-8555-B25237177AE5}

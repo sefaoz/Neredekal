@@ -1,38 +1,40 @@
-using Neredekal.Hotel.Application;
-using Neredekal.Hotel.Insfrastructure;
-using System.Reflection;
+using Neredekal.Rapor.Consumer.Services;
+using Polly;
+using Neredekal.Rapor.Infrastructure;
+using Neredekal.Rapor.Application;
 using Serilog.Sinks.Elasticsearch;
 using Serilog;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
 
 builder.Host.UseSerilog();
 ConfigureLogging();
 ConfigureElasticSink(builder.Configuration, builder.Environment.EnvironmentName);
 
-// Add services to the container.
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationService();
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient<IHotelService, HotelService>(client =>
+{
+    client.BaseAddress = new Uri("http://host.docker.internal:5249/api/Hotel/");
+    //client.BaseAddress = new Uri("http://host.docker.internal:5249/api/Hotel/");
+
+}).AddTransientHttpErrorPolicy(policyBuilder =>
+    policyBuilder.WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))))
+.AddTransientHttpErrorPolicy(policyBuilder =>
+    policyBuilder.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
+
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
-app.UseAuthorization();
-
-app.MapControllers();
+app.UseHttpsRedirection();
 
 app.Run();
+
 
 
 static void ConfigureLogging()

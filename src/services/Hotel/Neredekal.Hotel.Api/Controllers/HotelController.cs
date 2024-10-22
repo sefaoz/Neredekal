@@ -54,5 +54,11 @@ namespace Neredekal.Hotel.Api.Controllers
         {
             return Ok();
         }
+
+        [HttpGet("Report")]
+        public async Task<IActionResult> GetReport()
+        {
+            return Ok();
+        }
     }
 }
