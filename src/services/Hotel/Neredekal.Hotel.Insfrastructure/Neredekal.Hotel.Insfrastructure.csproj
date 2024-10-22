@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\common\Neredekal.Common.Domain\Neredekal.Common.Domain.csproj" />
+    <ProjectReference Include="..\Neredekal.Hotel.Application\Neredekal.Hotel.Application.csproj" />
     <ProjectReference Include="..\Neredekal.Hotel.Domain\Neredekal.Hotel.Domain.csproj" />
   </ItemGroup>
 

@@ -10,7 +10,8 @@ namespace Neredekal.Hotel.Application.Abstractions.Repositories
     public interface IHotelRepository : IUnitOfWorks
     {
         Task Create(Domain.AggregateModels.HotelModels.Hotel hotel);
-        Task Delete(Domain.AggregateModels.HotelModels.Hotel hotel);
-        Task<Domain.AggregateModels.HotelModels.Hotel> Get(Guid id);
+        Task Delete(Guid id);
+        Task<Domain.AggregateModels.HotelModels.Hotel> Get(Guid id, CancellationToken cancellationToken);
+        Task<List<Domain.AggregateModels.HotelModels.Hotel>> GetAll();
     }
 }

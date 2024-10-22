@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Neredekal.Common.Domain.OutboxModel;
 using Neredekal.Common.Domain.SeedWorks;
 using Neredekal.Hotel.Domain.AggregateModels.HotelModels;
 using Neredekal.Hotel.Insfrastructure.Persistence.Configurations;
@@ -23,13 +17,11 @@ namespace Neredekal.Hotel.Insfrastructure.Persistence
 
         public DbSet<Domain.AggregateModels.HotelModels.Hotel> Hotels { get; set; }
         public DbSet<HotelContactInfoItems> HotelContactInfoItems { get; set; }
-        public DbSet<OutboxMessage> OutboxMessages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new HotelConfiguration());
             modelBuilder.ApplyConfiguration(new HotelContactInfoConfiguration());
-            modelBuilder.ApplyConfiguration(new OutboxMessageConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

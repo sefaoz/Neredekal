@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Neredekal.Hotel.Application.Abstractions.Repositories;
 using Neredekal.Hotel.Insfrastructure.Persistence;
+using Neredekal.Hotel.Insfrastructure.Persistence.Repositories;
 
 namespace Neredekal.Hotel.Insfrastructure
 {
@@ -18,6 +20,13 @@ namespace Neredekal.Hotel.Insfrastructure
             {
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
             });
+
+            #region Repositories
+
+            services.AddScoped<IHotelRepository, HotelRepository>();
+            services.AddScoped<IHotelContactInfoRepository, HotelContactInfoRepository>();
+
+            #endregion
         }
     }
 }
