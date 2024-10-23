@@ -224,3 +224,39 @@ CREATE TABLE "ReportDetails" (
 2024-10-23 11:48:29.091 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
 INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
 VALUES ('20241023084752_Init', '8.0.10');
+2024-10-23 09:46:39.638 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-23 09:46:39.674 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 09:46:39.677 +00:00 [INF] Hosting environment: Development
+2024-10-23 09:46:39.679 +00:00 [INF] Content root path: /app
+2024-10-23 09:47:16.553 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2024-10-23 09:47:16.809 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 258.4471ms
+2024-10-23 09:47:16.863 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/swagger-ui.css - null null
+2024-10-23 09:47:16.941 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/swagger-ui-bundle.js - null null
+2024-10-23 09:47:16.941 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/swagger-ui-standalone-preset.js - null null
+2024-10-23 09:47:17.081 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-10-23 09:47:17.088 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/swagger-ui.css - 200 152034 text/css 225.6351ms
+2024-10-23 09:47:17.145 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-10-23 09:47:17.150 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 208.0971ms
+2024-10-23 09:47:17.243 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-10-23 09:47:17.249 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 305.1546ms
+2024-10-23 09:47:17.687 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2024-10-23 09:47:17.715 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/favicon-32x32.png - null null
+2024-10-23 09:47:17.746 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-10-23 09:47:17.759 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/favicon-32x32.png - 200 628 image/png 43.8206ms
+2024-10-23 09:47:17.822 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 135.4723ms
+2024-10-23 09:48:15.084 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-23 09:48:15.126 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 09:48:15.130 +00:00 [INF] Hosting environment: Development
+2024-10-23 09:48:15.132 +00:00 [INF] Content root path: /app
+2024-10-23 09:56:28.933 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-23 09:56:28.975 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 09:56:28.978 +00:00 [INF] Hosting environment: Development
+2024-10-23 09:56:28.981 +00:00 [INF] Content root path: /app
+2024-10-23 10:00:47.275 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-23 10:00:47.312 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 10:00:47.316 +00:00 [INF] Hosting environment: Development
+2024-10-23 10:00:47.320 +00:00 [INF] Content root path: /app
+2024-10-23 10:06:19.130 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-23 10:06:19.173 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 10:06:19.176 +00:00 [INF] Hosting environment: Development
+2024-10-23 10:06:19.178 +00:00 [INF] Content root path: /app

@@ -4,6 +4,8 @@ using Neredekal.Hotel.Application.UseCase.HotelContactUseCases.Commands;
 
 namespace Neredekal.Hotel.Api.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class HotelContactController : Controller
     {
         private readonly IMediator _mediator;

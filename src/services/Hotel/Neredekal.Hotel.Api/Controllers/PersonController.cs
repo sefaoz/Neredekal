@@ -4,6 +4,8 @@ using Neredekal.Hotel.Application.UseCases.HotelGetPersonsUseCases.Queries;
 
 namespace Neredekal.Hotel.Api.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class PersonController : Controller
     {
         private readonly IMediator _mediator;

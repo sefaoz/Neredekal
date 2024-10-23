@@ -12,9 +12,9 @@ namespace Neredekal.Hotel.Application.UseCase.HotelContactUseCases.Commands
 {
     public class CreateHotelContactCommand : IRequest<Result>
     {
-        public Guid HotelId { get; set; }
-        public InformationTypeEnum InformationType { get; set; }
-        public string InformationContent { get; set; }
+        public required Guid HotelId { get; set; }
+        public required InformationTypeEnum InformationType { get; set; }
+        public required string InformationContent { get; set; }
     }
 
     public class CreateHotelContactCommandHandler : IRequestHandler<CreateHotelContactCommand, Result>
@@ -28,7 +28,7 @@ namespace Neredekal.Hotel.Application.UseCase.HotelContactUseCases.Commands
 
         public async Task<Result> Handle(CreateHotelContactCommand request, CancellationToken cancellationToken)
         {
-            var hotelContact = HotelContactInfoItems.CreateHotelContactInfoItems(Guid.NewGuid(),
+            var hotelContact = HotelContactInfoItems.Create(Guid.NewGuid(),
                 request.InformationType, request.InformationContent, request.HotelId);
 
             await _repository.Create(hotelContact);

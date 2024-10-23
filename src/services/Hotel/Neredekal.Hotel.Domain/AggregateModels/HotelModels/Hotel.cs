@@ -36,7 +36,7 @@ namespace Neredekal.Hotel.Domain.AggregateModels.HotelModels
 
         #region methods
 
-        public static Hotel CreateHotel(Guid id, string personName, string personSurname, string companyName, List<HotelContactInfoItems> hotelContactInfoItems)
+        public static Hotel Create(Guid id, string personName, string personSurname, string companyName, List<HotelContactInfoItems> hotelContactInfoItems)
         {
             return new (id,personName, personSurname, companyName, hotelContactInfoItems);
         }
