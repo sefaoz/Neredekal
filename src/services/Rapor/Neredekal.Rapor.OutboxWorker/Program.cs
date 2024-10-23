@@ -17,7 +17,7 @@ internal class Program
             {
                 services.AddDbContext<ReportDbContext>(options =>
                 {
-                    options.UseNpgsql("Server=localhost;Port=5432;Database=hotelDb;User Id=postgres;Password=postgres");
+                    options.UseNpgsql("Server=host.docker.internal;Port=5431;Database=reportDb;User Id=postgres;Password=postgres;");
                 });
 
                 services.AddScoped<IOutboxMessageRepository, OutboxMessageRepository>();
@@ -31,7 +31,7 @@ internal class Program
                 {
                     busConfigurator.UsingRabbitMq((context, configure) =>
                     {
-                        var host = "localhost";
+                        var host = "amqp://host.docker.internal:5672";
                         var username = "guest";
                         var password = "guest";
                         configure.Host(new Uri(host!), hostConfigurator =>

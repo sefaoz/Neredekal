@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Neredekal.Common.Domain.IntegrationEvents.HotelIntegrationEvents;
 using Neredekal.Hotel.Application.Abstractions.Repositories;
 using Neredekal.Hotel.Application.Wrappers;
 using Neredekal.Hotel.Domain.AggregateModels.HotelModels;
@@ -11,7 +10,7 @@ namespace Neredekal.Hotel.Application.UseCase.HotelUseCases.Commands
         public string PersonName { get; set; }
         public string PersonSurname { get; set; }
         public string CompanyName { get; set; }
-        public required List<HotelContactInfoItemDto> HotelContactInfoItems { get; set; }
+        public required List<HotelContactInfoItems> HotelContactInfoItems { get; set; }
     }
 
     public class CreateHotelCommandHandler : IRequestHandler<CreateHotelCommand, Result>
@@ -30,14 +29,14 @@ namespace Neredekal.Hotel.Application.UseCase.HotelUseCases.Commands
 
             foreach (var contactItem in request.HotelContactInfoItems)
             {
-                contactItems.Add(HotelContactInfoItems.CreateHotelContactInfoItems(Guid.NewGuid(), (InformationTypeEnum)contactItem.InformationType, contactItem.InformationContent, hotelId));
+                contactItems.Add(HotelContactInfoItems.CreateHotelContactInfoItems(Guid.NewGuid(), contactItem.InformationType, contactItem.InformationContent, hotelId));
             }
 
             var hotel = Domain.AggregateModels.HotelModels.Hotel.CreateHotel(hotelId, request.PersonName,
                 request.PersonSurname, request.CompanyName, contactItems);
 
             await _repository.Create(hotel);
-            await _repository.SaveChangesAsync();
+            await _repository.SaveChangesAsync(cancellationToken);
 
             return Result.Success("Hotel Created");
         }

@@ -1,5 +1,4 @@
-﻿using Neredekal.Common.Domain.IntegrationEvents.HotelIntegrationEvents;
-using Neredekal.Hotel.Domain.AggregateModels.HotelModels;
+﻿using Neredekal.Hotel.Domain.AggregateModels.HotelModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

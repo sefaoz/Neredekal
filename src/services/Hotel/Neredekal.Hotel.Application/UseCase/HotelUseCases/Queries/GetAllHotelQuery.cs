@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Neredekal.Common.Domain.IntegrationEvents.HotelIntegrationEvents;
 using Neredekal.Hotel.Application.Abstractions.Repositories;
 using Neredekal.Hotel.Application.UseCase.HotelUseCases.Response;
 using Neredekal.Hotel.Application.Wrappers;

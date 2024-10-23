@@ -9,7 +9,7 @@ namespace Neredekal.Rapor.Domain.AggregateModels.RaporModels
 {
     public class ReportDetail : AggregateRoot
     {
-        #region MyRegion
+        #region properties
         public override Guid UUID { get; set; }
         public DateTime RequestDate { get; set; }
         public ReportStatusEnum ReportStatus { get; set; }

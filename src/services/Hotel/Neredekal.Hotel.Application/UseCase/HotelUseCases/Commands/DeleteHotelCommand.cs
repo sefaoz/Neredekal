@@ -23,13 +23,13 @@ namespace Neredekal.Hotel.Application.UseCase.HotelUseCases.Commands
 
         public async Task<Result> Handle(DeleteHotelCommand request, CancellationToken cancellationToken)
         {
-            var hotel = await _repository.Get(request.HotelId);
+            var hotel = await _repository.Get(request.HotelId,cancellationToken);
 
             if (hotel == null)
                 return Result.Error("Hotel not found.");
 
             await _repository.Delete(hotel.UUID);
-            await _repository.SaveChangesAsync();
+            await _repository.SaveChangesAsync(cancellationToken);
 
             return Result.Success("Hotel Removed");
         }
