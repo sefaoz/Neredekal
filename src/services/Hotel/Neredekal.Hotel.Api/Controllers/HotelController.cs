@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Neredekal.Hotel.Application.UseCase.HotelUseCases.Commands;
 using Neredekal.Hotel.Application.UseCase.HotelUseCases.Queries;
+using Neredekal.Hotel.Application.UseCases.HotelGetPersonsUseCases.Queries;
 
 namespace Neredekal.Hotel.Api.Controllers
 {
@@ -17,16 +18,8 @@ namespace Neredekal.Hotel.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateHotel(CreateHotelCommand command)
-        {
-            await _mediator.Send(command);
-
-            return Created();
-        }
-
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetHotel(Guid id, CancellationToken cancellationToken = default)
+        public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken = default)
         {
             var result = await _mediator.Send(new GetHotelQuery(id), cancellationToken);
 
@@ -34,25 +27,35 @@ namespace Neredekal.Hotel.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllHotels()
+        public async Task<IActionResult> GetAll()
         {
             var result = await _mediator.Send(new GetAllHotelQuery());
 
-            return Ok(result.Data);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteHotel(Guid id)
-        {
-            await _mediator.Send(new DeleteHotelCommand(id));
-
-            return NoContent();
+            return Ok(result);
         }
 
         [HttpGet("{id}/Person")]
-        public async Task<IActionResult> GetHotelPersons()
+        public async Task<IActionResult> GetPerson(Guid id)
         {
-            return Ok();
+            var result = await _mediator.Send(new GetHotelPersonQuery(id));
+
+            return Ok(result);
+        }
+
+        [HttpPost("Create")]
+        public async Task<IActionResult> Create(CreateHotelCommand command)
+        {
+            await _mediator.Send(command);
+
+            return Created();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var result = await _mediator.Send(new DeleteHotelCommand(id));
+
+            return Ok(result);
         }
 
         [HttpGet("Report")]

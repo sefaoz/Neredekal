@@ -17,9 +17,9 @@ namespace Neredekal.Hotel.Insfrastructure.Persistence.Repositories
             _context = context;
         }
 
-        public async Task Create(Domain.AggregateModels.HotelModels.Hotel hotel)
+        public async Task Create(Domain.AggregateModels.HotelModels.Hotel hotel, CancellationToken cancellationToken)
         {
-            await _context.Set<Domain.AggregateModels.HotelModels.Hotel>().AddAsync(hotel);
+            await _context.Set<Domain.AggregateModels.HotelModels.Hotel>().AddAsync(hotel,cancellationToken);
         }
 
         public async Task Delete(Guid id)
@@ -38,10 +38,10 @@ namespace Neredekal.Hotel.Insfrastructure.Persistence.Repositories
                 .FirstOrDefaultAsync(x => x.UUID == id, cancellationToken);
         }
 
-        public async Task<List<Domain.AggregateModels.HotelModels.Hotel>> GetAll()
+        public async Task<List<Domain.AggregateModels.HotelModels.Hotel>> GetAll(CancellationToken cancellationToken)
         {
             return await _context.Set<Domain.AggregateModels.HotelModels.Hotel>().Include(x => x.HotelContactInfoItems)
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
         }
 
         public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

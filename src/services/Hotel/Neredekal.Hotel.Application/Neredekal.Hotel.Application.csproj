@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Folder Include="Events\DomainEvents\" />
+    <Folder Include="UseCases\HotelGetPersonsUseCases\Responses\" />
   </ItemGroup>
 
 </Project>

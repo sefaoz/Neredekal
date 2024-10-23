@@ -35,7 +35,7 @@ namespace Neredekal.Hotel.Application.UseCase.HotelUseCases.Commands
             var hotel = Domain.AggregateModels.HotelModels.Hotel.CreateHotel(hotelId, request.PersonName,
                 request.PersonSurname, request.CompanyName, contactItems);
 
-            await _repository.Create(hotel);
+            await _repository.Create(hotel,cancellationToken);
             await _repository.SaveChangesAsync(cancellationToken);
 
             return Result.Success("Hotel Created");

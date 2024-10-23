@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Neredekal.Hotel.Application.UseCase.HotelUseCases.Response
+namespace Neredekal.Hotel.Application.UseCase.HotelUseCases.Responses
 {
-    public class HotelGetResponse
+    public class GetHotelResponse
     {
         public Guid Id { get; set; }
         public string PersonName { get; set; }

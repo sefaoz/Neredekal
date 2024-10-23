@@ -9,9 +9,9 @@ namespace Neredekal.Hotel.Application.Abstractions.Repositories
 {
     public interface IHotelRepository : IUnitOfWorks
     {
-        Task Create(Domain.AggregateModels.HotelModels.Hotel hotel);
+        Task Create(Domain.AggregateModels.HotelModels.Hotel hotel, CancellationToken cancellationToken);
         Task Delete(Guid id);
         Task<Domain.AggregateModels.HotelModels.Hotel> Get(Guid id, CancellationToken cancellationToken);
-        Task<List<Domain.AggregateModels.HotelModels.Hotel>> GetAll();
+        Task<List<Domain.AggregateModels.HotelModels.Hotel>> GetAll(CancellationToken cancellationToken);
     }
 }
