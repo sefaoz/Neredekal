@@ -20,10 +20,10 @@ namespace Neredekal.Hotel.Domain.AggregateModels.HotelModels
         public List<HotelContactInfoItems> HotelContactInfoItems { get; set; }
         #endregion
 
-        #region ctor
+        #region ctors
         protected Hotel() { }
 
-        private Hotel(Guid id, string personName, string personSurname, string companyName, List<HotelContactInfoItems> hotelContactInfoItems)
+        public Hotel(Guid id, string personName, string personSurname, string companyName, List<HotelContactInfoItems> hotelContactInfoItems)
         {
             UUID = id;
             PersonName = personName;

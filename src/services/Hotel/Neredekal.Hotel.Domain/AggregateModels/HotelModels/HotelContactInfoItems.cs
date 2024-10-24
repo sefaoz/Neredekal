@@ -20,7 +20,7 @@ namespace Neredekal.Hotel.Domain.AggregateModels.HotelModels
         public Hotel Hotel { get; set; }
         #endregion
 
-        #region ctor
+        #region ctors
         protected HotelContactInfoItems() { }
 
         public HotelContactInfoItems(Guid id, InformationTypeEnum informationType, string informationContent, Guid hotelId)
