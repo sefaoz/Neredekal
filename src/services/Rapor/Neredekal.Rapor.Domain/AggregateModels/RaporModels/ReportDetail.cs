@@ -32,13 +32,19 @@ namespace Neredekal.Rapor.Domain.AggregateModels.RaporModels
 
         public static ReportDetail CreateReportDetail(Guid id, string data, ReportStatusEnum reportStatus = ReportStatusEnum.Preparing)
         {
+            if(id == Guid.Empty) id = Guid.NewGuid();
+            Guard.CannotNull(data, nameof(data));
+
             return new(id, data, reportStatus);
         }
 
         public void SetStatusCompleted(string data)
         {
-            ReportStatus = ReportStatusEnum.Completed;
-            Data = data;
+            if(ReportStatus != ReportStatusEnum.Completed)
+            {
+                ReportStatus = ReportStatusEnum.Completed;
+                Data = data;
+            }
         }
 
         #endregion

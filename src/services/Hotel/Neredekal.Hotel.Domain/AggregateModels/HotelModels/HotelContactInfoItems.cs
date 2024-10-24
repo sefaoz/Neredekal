@@ -37,6 +37,9 @@ namespace Neredekal.Hotel.Domain.AggregateModels.HotelModels
         public static HotelContactInfoItems Create(Guid id, InformationTypeEnum informationType, string informationContent,
             Guid hotelId)
         {
+            if (!Enum.IsDefined(typeof(InformationTypeEnum), informationType)) throw new ArgumentOutOfRangeException("Invalid information type.", nameof(informationType));
+            Guard.CannotNull(informationContent, nameof(informationContent));
+
             return new(id, informationType, informationContent, hotelId);
         }
 

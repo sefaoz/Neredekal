@@ -38,7 +38,13 @@ namespace Neredekal.Hotel.Domain.AggregateModels.HotelModels
 
         public static Hotel Create(Guid id, string personName, string personSurname, string companyName, List<HotelContactInfoItems> hotelContactInfoItems)
         {
-            return new (id,personName, personSurname, companyName, hotelContactInfoItems);
+            if (id == Guid.Empty) id = Guid.NewGuid();
+            Guard.CannotNull(personName, nameof(personName));
+            Guard.CannotNull(personSurname, nameof(personName));
+            Guard.CannotNull(companyName, nameof(personName));
+            Guard.CannotNull(hotelContactInfoItems, nameof(personName));
+
+            return new(id, personName, personSurname, companyName, hotelContactInfoItems);
         }
         #endregion
     }

@@ -84,19 +84,22 @@ namespace Neredekal.Rapor.Domain.UnitTests.Tests
             var id = Guid.NewGuid();
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(() =>
-                ReportDetail.CreateReportDetail(id, null));
+            var exception = Assert.Throws<ArgumentNullException>(() => ReportDetail.CreateReportDetail(id, null));
+            Assert.Equal($"Value cannot be null. (Parameter '{exception.ParamName}')", exception.Message);
         }
 
         [Fact]
         public void CreateReportDetail_ShouldThrowException_WhenIdIsEmpty()
         {
             // Arrange
+            var reportId = Guid.NewGuid();
             var data = "Sample data";
 
-            // Act & Assert
-            Assert.Throws<ArgumentException>(() =>
-                ReportDetail.CreateReportDetail(Guid.Empty, data));
+            // Act
+            var report = ReportDetail.CreateReportDetail(Guid.Empty, data);
+
+            // Assert
+            Assert.NotEqual(Guid.Empty, report.UUID);
         }
     }
 }
