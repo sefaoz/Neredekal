@@ -146,3 +146,75 @@ System.IO.IOException: Failed to bind to address https://[::]:6002: address alre
 2024-10-23 10:06:19.096 +00:00 [INF] Application started. Press Ctrl+C to shut down.
 2024-10-23 10:06:19.099 +00:00 [INF] Hosting environment: Development
 2024-10-23 10:06:19.101 +00:00 [INF] Content root path: /app
+2024-10-23 10:58:41.846 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 10:58:41.892 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 10:58:41.896 +00:00 [INF] Hosting environment: Development
+2024-10-23 10:58:41.898 +00:00 [INF] Content root path: /app
+2024-10-23 11:00:08.312 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 11:00:08.355 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 11:00:08.358 +00:00 [INF] Hosting environment: Development
+2024-10-23 11:00:08.381 +00:00 [INF] Content root path: /app
+2024-10-23 11:44:17.231 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 11:44:17.274 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 11:44:17.277 +00:00 [INF] Hosting environment: Development
+2024-10-23 11:44:17.280 +00:00 [INF] Content root path: /app
+2024-10-23 19:16:05.508 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 19:16:05.552 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 19:16:05.556 +00:00 [INF] Hosting environment: Development
+2024-10-23 19:16:05.558 +00:00 [INF] Content root path: /app
+2024-10-23 19:28:05.477 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 19:28:05.538 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 19:28:05.542 +00:00 [INF] Hosting environment: Development
+2024-10-23 19:28:05.545 +00:00 [INF] Content root path: /app
+2024-10-23 19:38:15.593 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 19:38:15.732 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 19:38:15.749 +00:00 [INF] Hosting environment: Development
+2024-10-23 19:38:15.781 +00:00 [INF] Content root path: /app
+2024-10-23 19:41:35.965 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 19:41:36.089 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 19:41:36.094 +00:00 [INF] Hosting environment: Development
+2024-10-23 19:41:36.102 +00:00 [INF] Content root path: /app
+2024-10-23 19:43:36.855 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 19:43:37.109 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 19:43:37.114 +00:00 [INF] Hosting environment: Development
+2024-10-23 19:43:37.117 +00:00 [INF] Content root path: /app
+2024-10-23 19:44:51.396 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 19:44:51.467 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 19:44:51.471 +00:00 [INF] Hosting environment: Development
+2024-10-23 19:44:51.475 +00:00 [INF] Content root path: /app
+2024-10-23 19:47:25.405 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 19:47:25.491 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 19:47:25.496 +00:00 [INF] Hosting environment: Development
+2024-10-23 19:47:25.503 +00:00 [INF] Content root path: /app
+2024-10-23 19:49:16.393 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 19:49:16.490 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 19:49:16.496 +00:00 [INF] Hosting environment: Development
+2024-10-23 19:49:16.502 +00:00 [INF] Content root path: /app
+2024-10-23 20:00:16.337 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 20:00:16.417 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 20:00:16.422 +00:00 [INF] Hosting environment: Development
+2024-10-23 20:00:16.426 +00:00 [INF] Content root path: /app
+2024-10-23 20:10:07.419 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 20:10:07.491 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 20:10:07.495 +00:00 [INF] Hosting environment: Development
+2024-10-23 20:10:07.499 +00:00 [INF] Content root path: /app
+2024-10-23 20:13:08.851 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 20:13:08.934 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 20:13:08.938 +00:00 [INF] Hosting environment: Development
+2024-10-23 20:13:08.944 +00:00 [INF] Content root path: /app
+2024-10-23 20:30:27.715 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 20:30:27.811 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 20:30:27.821 +00:00 [INF] Hosting environment: Development
+2024-10-23 20:30:27.825 +00:00 [INF] Content root path: /app
+2024-10-23 20:37:27.995 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 20:37:28.090 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 20:37:28.099 +00:00 [INF] Hosting environment: Development
+2024-10-23 20:37:28.113 +00:00 [INF] Content root path: /app
+2024-10-23 20:50:41.095 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 20:50:41.173 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 20:50:41.178 +00:00 [INF] Hosting environment: Development
+2024-10-23 20:50:41.182 +00:00 [INF] Content root path: /app
+2024-10-23 21:01:21.498 +00:00 [INF] Now listening on: http://[::]:6002
+2024-10-23 21:01:21.545 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-23 21:01:21.549 +00:00 [INF] Hosting environment: Development
+2024-10-23 21:01:21.552 +00:00 [INF] Content root path: /app

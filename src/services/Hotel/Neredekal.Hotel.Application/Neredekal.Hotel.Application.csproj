@@ -11,8 +11,4 @@
     <ProjectReference Include="..\Neredekal.Hotel.Domain\Neredekal.Hotel.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Events\DomainEvents\" />
-  </ItemGroup>
-
 </Project>

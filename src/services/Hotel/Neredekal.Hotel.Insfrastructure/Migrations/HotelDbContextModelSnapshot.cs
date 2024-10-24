@@ -73,7 +73,7 @@ namespace Neredekal.Hotel.Insfrastructure.Migrations
                     b.HasOne("Neredekal.Hotel.Domain.AggregateModels.HotelModels.Hotel", "Hotel")
                         .WithMany("HotelContactInfoItems")
                         .HasForeignKey("HotelId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
                     b.Navigation("Hotel");

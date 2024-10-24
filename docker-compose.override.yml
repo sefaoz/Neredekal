@@ -48,7 +48,7 @@ services:
     - POSTGRES_USER=postgres
     - POSTGRES_PASSWORD=postgres
     volumes:
-    - ./.containers/database:/var/lib/postgresql/data
+    - ./.containers/database:/hoteldb/var/lib/postgresql/data
     ports:
     - 5430:5432
     networks:
@@ -63,7 +63,7 @@ services:
     - POSTGRES_USER=postgres
     - POSTGRES_PASSWORD=postgres
     volumes:
-    - ./.containers/database:/var/lib/postgresql/data
+    - ./.containers/database:/reportdb/var/lib/postgresql/data
     ports:
     - 5431:5432
     networks:

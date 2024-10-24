@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Neredekal.Hotel.Application.UseCase.HotelUseCases.Commands;
 using Neredekal.Hotel.Application.UseCase.HotelUseCases.Queries;
 using Neredekal.Hotel.Application.UseCases.HotelGetPersonsUseCases.Queries;
+using Neredekal.Hotel.Application.UseCases.HotelReportUseCases.Queries;
 
 namespace Neredekal.Hotel.Api.Controllers
 {
@@ -42,7 +43,7 @@ namespace Neredekal.Hotel.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost("Create")]
+        [HttpPost]
         public async Task<IActionResult> Create(CreateHotelCommand command)
         {
             await _mediator.Send(command);
@@ -61,7 +62,8 @@ namespace Neredekal.Hotel.Api.Controllers
         [HttpGet("Report")]
         public async Task<IActionResult> GetReport()
         {
-            return Ok();
+            var result = await _mediator.Send(new GetReportQuery());
+            return Ok(result.Data);
         }
     }
 }

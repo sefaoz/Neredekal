@@ -5,6 +5,8 @@ using Neredekal.Rapor.Application;
 using Serilog.Sinks.Elasticsearch;
 using Serilog;
 using System.Reflection;
+using MassTransit;
+using Neredekal.Rapor.Consumer.Consumers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,11 +19,37 @@ ConfigureElasticSink(builder.Configuration, builder.Environment.EnvironmentName)
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationService();
 
+builder.Services.AddMassTransit(configuration => {
+    configuration.AddConsumer<ReportDetailCreatedIntegrationEventConsumer>();
+
+    configuration.UsingRabbitMq((context, configure) =>
+    {
+        var host = "amqp://host.docker.internal:5672";
+        var username = "guest";
+        var password = "guest";
+        configure.Host(new Uri(host!), hostConfigurator =>
+        {
+            hostConfigurator.Username(username);
+            hostConfigurator.Password(password);
+        });
+
+        configure.ReceiveEndpoint("report-detail-created-integration-event-queue", e => {
+            e.ConfigureConsumer<ReportDetailCreatedIntegrationEventConsumer>(context);
+
+            e.UseRetry(retryConfig =>
+            {
+                retryConfig.Interval(3, TimeSpan.FromSeconds(5));
+            });
+        });
+    });
+});
+
+builder.Services.AddMassTransitHostedService();
+
 builder.Services.AddHttpClient<IHotelService, HotelService>(client =>
 {
-    client.BaseAddress = new Uri("http://host.docker.internal:5249/api/Hotel/");
-    //client.BaseAddress = new Uri("http://host.docker.internal:5249/api/Hotel/");
-
+    client.BaseAddress = new Uri("http://host.docker.internal:5001/api/Hotel/");
+    client.DefaultRequestHeaders.Add("Accept", "application/json");
 }).AddTransientHttpErrorPolicy(policyBuilder =>
     policyBuilder.WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))))
 .AddTransientHttpErrorPolicy(policyBuilder =>

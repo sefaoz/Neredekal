@@ -1,0 +1,2 @@
+VHOST: /
+QUEUE: report-detail-created-integration-event-queue

@@ -13,17 +13,17 @@ namespace Neredekal.Rapor.Domain.AggregateModels.RaporModels
         public override Guid UUID { get; set; }
         public DateTime RequestDate { get; set; }
         public ReportStatusEnum ReportStatus { get; set; }
-        public string? Data { get; set; }
+        public string Data { get; set; }
         #endregion
 
         #region ctor
         protected ReportDetail() { }
 
-        private ReportDetail(Guid id, ReportStatusEnum reportStatus, string? data)
+        private ReportDetail(Guid id, string data, ReportStatusEnum reportStatus)
         {
             UUID = id;
-            ReportStatus = reportStatus;
             Data = data;
+            ReportStatus = reportStatus;
             RequestDate = DateTime.UtcNow;
         }
         #endregion
@@ -32,7 +32,7 @@ namespace Neredekal.Rapor.Domain.AggregateModels.RaporModels
 
         public static ReportDetail CreateReportDetail(Guid id, string data, ReportStatusEnum reportStatus = ReportStatusEnum.Preparing)
         {
-            return new(id, reportStatus, data);
+            return new(id, data, reportStatus);
         }
 
         public void SetStatusCompleted(string data)

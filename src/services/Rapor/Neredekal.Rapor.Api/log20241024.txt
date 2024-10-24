@@ -1,0 +1,1071 @@
+2024-10-24 07:34:45.369 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 07:34:45.414 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 07:34:45.418 +00:00 [INF] Hosting environment: Development
+2024-10-24 07:34:45.421 +00:00 [INF] Content root path: /app
+2024-10-24 07:37:12.658 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 07:37:12.722 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 07:37:12.728 +00:00 [INF] Hosting environment: Development
+2024-10-24 07:37:12.732 +00:00 [INF] Content root path: /app
+2024-10-24 08:02:41.236 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 08:02:41.283 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 08:02:41.286 +00:00 [INF] Hosting environment: Development
+2024-10-24 08:02:41.289 +00:00 [INF] Content root path: /app
+2024-10-24 11:05:16.302 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-10-24 11:05:16.338 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-10-24 11:05:16.411 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2024-10-24 11:05:16.424 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-10-24 11:05:16.427 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-10-24 11:05:16.437 +03:00 [INF] Applying migration '20241023203557_Init'.
+2024-10-24 11:05:16.453 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "OutboxMessage" (
+    "Id" uuid NOT NULL,
+    "Type" text NOT NULL,
+    "Content" text NOT NULL,
+    "CreatedAt" timestamp with time zone NOT NULL,
+    "ProcessedAt" timestamp with time zone,
+    "Error" text,
+    "Status" integer NOT NULL,
+    CONSTRAINT "PK_OutboxMessage" PRIMARY KEY ("Id")
+);
+2024-10-24 11:05:16.455 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ReportDetails" (
+    "UUID" uuid NOT NULL,
+    "RequestDate" timestamp with time zone NOT NULL,
+    "ReportStatus" integer NOT NULL,
+    "Data" text NOT NULL,
+    CONSTRAINT "PK_ReportDetails" PRIMARY KEY ("UUID")
+);
+2024-10-24 11:05:16.456 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20241023203557_Init', '8.0.10');
+2024-10-24 08:07:51.472 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 08:07:51.535 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 08:07:51.539 +00:00 [INF] Hosting environment: Development
+2024-10-24 08:07:51.543 +00:00 [INF] Content root path: /app
+2024-10-24 09:03:28.985 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 09:03:29.030 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 09:03:29.033 +00:00 [INF] Hosting environment: Development
+2024-10-24 09:03:29.036 +00:00 [INF] Content root path: /app
+2024-10-24 09:06:24.698 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2024-10-24 09:06:24.861 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 165.5713ms
+2024-10-24 09:06:29.898 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2024-10-24 09:06:30.044 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 145.2585ms
+2024-10-24 09:06:35.376 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 09:06:35.387 +00:00 [WRN] Failed to determine the https port for redirect.
+2024-10-24 09:06:35.417 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:06:35.449 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:06:38.435 +00:00 [ERR] Failed executing DbCommand (119ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 09:06:38.510 +00:00 [ERR] An exception occurred in the database while saving changes for context type 'Neredekal.Rapor.Infrastructure.Persistence.ReportDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "Data" of relation "ReportDetails" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "Data" of relation "ReportDetails" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: ReportDetails
+    ColumnName: Data
+    File: execMain.c
+    Line: 1981
+    Routine: ExecConstraints
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "Data" of relation "ReportDetails" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "Data" of relation "ReportDetails" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: ReportDetails
+    ColumnName: Data
+    File: execMain.c
+    Line: 1981
+    Routine: ExecConstraints
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-10-24 09:06:38.802 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 3344.9418ms
+2024-10-24 09:06:38.807 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:06:38.816 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "Data" of relation "ReportDetails" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "Data" of relation "ReportDetails" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: ReportDetails
+    ColumnName: Data
+    File: execMain.c
+    Line: 1981
+    Routine: ExecConstraints
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Neredekal.Rapor.Infrastructure.Persistence.ReportDbContext.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Infrastructure\Persistence\ReportDbContext.cs:line 48
+   at Neredekal.Rapor.Infrastructure.Persistence.Repositories.ReportDetailRepository.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Infrastructure\Persistence\Repositories\ReportDetailRepository.cs:line 38
+   at Neredekal.Rapor.Application.UseCase.RaporUseCases.Commands.CreateRaporDetailCommandHandler.Handle(CreateReportDetailCommand request, CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Application\UseCases\RaporUseCases\Commands\CreateReportDetailCommand.cs:line 35
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Neredekal.Rapor.Api.Controllers.ReportController.Create() in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Api\Controllers\ReportController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-24 09:06:38.905 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 500 null text/plain; charset=utf-8 3528.6922ms
+2024-10-24 09:08:10.480 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 09:08:10.486 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:08:10.491 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:08:10.649 +00:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 09:08:10.732 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 09:08:10.735 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 238.7004ms
+2024-10-24 09:08:10.737 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:08:10.741 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 261.8048ms
+2024-10-24 09:08:59.626 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/Report - null null
+2024-10-24 09:08:59.662 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.GetAll (Neredekal.Rapor.Api)'
+2024-10-24 09:08:59.723 +00:00 [INF] Route matched with {action = "GetAll", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:09:00.226 +00:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UUID", r."Data", r."ReportStatus", r."RequestDate"
+FROM "ReportDetails" AS r
+2024-10-24 09:09:00.254 +00:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Neredekal.Rapor.Infrastructure.Persistence.ReportDbContext'.
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method145(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method145(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-10-24 09:09:00.426 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.GetAll (Neredekal.Rapor.Api) in 699.2004ms
+2024-10-24 09:09:00.430 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.GetAll (Neredekal.Rapor.Api)'
+2024-10-24 09:09:00.434 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method145(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Neredekal.Rapor.Infrastructure.Persistence.Repositories.ReportDetailRepository.GetAll(CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Infrastructure\Persistence\Repositories\ReportDetailRepository.cs:line 33
+   at Neredekal.Rapor.Application.UseCases.RaporUseCases.Queries.GetAllReportDetailQueryHandler.Handle(GetAllReportDetailQuery request, CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Application\UseCases\RaporUseCases\Queries\GetAllReportDetailQuery.cs:line 27
+   at Neredekal.Rapor.Api.Controllers.ReportController.GetAll() in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Api\Controllers\ReportController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-24 09:09:00.448 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/Report - 500 null text/plain; charset=utf-8 822.2411ms
+2024-10-24 09:09:45.384 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 09:09:45.389 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:09:45.411 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:09:45.471 +00:00 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 09:09:45.576 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 09:09:45.579 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 164.6093ms
+2024-10-24 09:09:45.582 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:09:45.586 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 201.9759ms
+2024-10-24 09:10:55.833 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 09:10:55.902 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:10:55.906 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:10:55.941 +00:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 09:10:56.041 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 09:10:56.044 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 135.1117ms
+2024-10-24 09:10:56.048 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:10:56.052 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 219.1951ms
+2024-10-24 09:12:17.262 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 09:12:17.267 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:12:17.272 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:12:17.367 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 09:12:17.393 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 09:12:17.397 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 118.4926ms
+2024-10-24 09:12:17.406 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:12:17.413 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 150.3275ms
+2024-10-24 09:12:36.537 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 09:12:36.540 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:12:36.544 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:17:55.455 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 09:17:55.507 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 09:17:55.510 +00:00 [INF] Hosting environment: Development
+2024-10-24 09:17:55.513 +00:00 [INF] Content root path: /app
+2024-10-24 09:18:38.782 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2024-10-24 09:18:39.025 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 243.8991ms
+2024-10-24 09:18:39.546 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2024-10-24 09:18:39.686 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 140.369ms
+2024-10-24 09:18:45.212 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 09:18:45.225 +00:00 [WRN] Failed to determine the https port for redirect.
+2024-10-24 09:18:45.253 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:18:45.293 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:18:56.115 +00:00 [INF] Executed DbCommand (124ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 09:19:21.649 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 09:19:21.655 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 36355.3198ms
+2024-10-24 09:19:21.660 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:19:21.672 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 36461.0542ms
+2024-10-24 09:22:05.889 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 09:22:05.895 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:22:05.900 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:22:13.338 +00:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 09:22:13.379 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 09:22:13.383 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 7479.4822ms
+2024-10-24 09:22:13.386 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:22:13.390 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 7501.8007ms
+2024-10-24 09:29:34.228 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 09:29:34.279 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:29:34.305 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:29:34.444 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 09:29:34.457 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 09:29:34.461 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 152.5983ms
+2024-10-24 09:29:34.464 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:29:34.468 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 240.2551ms
+2024-10-24 09:42:05.925 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 09:42:05.987 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:42:06.012 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:42:06.105 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 09:42:06.120 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 09:42:06.124 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 107.5581ms
+2024-10-24 09:42:06.130 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:42:06.134 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 208.9735ms
+2024-10-24 09:44:20.987 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 09:44:21.018 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:44:21.022 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:44:21.079 +00:00 [INF] Executed DbCommand (25ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 09:44:21.120 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 09:44:21.135 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 109.5715ms
+2024-10-24 09:44:21.138 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:44:21.155 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 163.0534ms
+2024-10-24 09:57:02.391 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 09:57:02.481 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 09:57:02.494 +00:00 [INF] Hosting environment: Development
+2024-10-24 09:57:02.497 +00:00 [INF] Content root path: /app
+2024-10-24 09:57:08.649 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2024-10-24 09:57:08.944 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 295.0837ms
+2024-10-24 09:57:09.538 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2024-10-24 09:57:09.716 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 177.5435ms
+2024-10-24 09:57:16.321 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 09:57:16.332 +00:00 [WRN] Failed to determine the https port for redirect.
+2024-10-24 09:57:16.344 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:57:16.371 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 09:57:19.105 +00:00 [INF] Executed DbCommand (122ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 09:57:19.175 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 09:57:19.182 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 2806.0593ms
+2024-10-24 09:57:19.186 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 09:57:19.199 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 2878.4624ms
+2024-10-24 10:00:32.775 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/Report - null null
+2024-10-24 10:00:32.835 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.GetAll (Neredekal.Rapor.Api)'
+2024-10-24 10:00:32.850 +00:00 [INF] Route matched with {action = "GetAll", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:00:33.434 +00:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UUID", r."Data", r."ReportStatus", r."RequestDate"
+FROM "ReportDetails" AS r
+2024-10-24 10:00:33.518 +00:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Neredekal.Rapor.Infrastructure.Persistence.ReportDbContext'.
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method145(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method145(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-10-24 10:00:33.746 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.GetAll (Neredekal.Rapor.Api) in 890.4415ms
+2024-10-24 10:00:33.752 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.GetAll (Neredekal.Rapor.Api)'
+2024-10-24 10:00:33.762 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method145(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Neredekal.Rapor.Infrastructure.Persistence.Repositories.ReportDetailRepository.GetAll(CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Infrastructure\Persistence\Repositories\ReportDetailRepository.cs:line 33
+   at Neredekal.Rapor.Application.UseCases.RaporUseCases.Queries.GetAllReportDetailQueryHandler.Handle(GetAllReportDetailQuery request, CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Application\UseCases\RaporUseCases\Queries\GetAllReportDetailQuery.cs:line 27
+   at Neredekal.Rapor.Api.Controllers.ReportController.GetAll() in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Api\Controllers\ReportController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-24 10:00:33.890 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/Report - 500 null text/plain; charset=utf-8 1115.5736ms
+2024-10-24 10:02:12.305 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 10:02:12.343 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 10:02:12.347 +00:00 [INF] Hosting environment: Development
+2024-10-24 10:02:12.349 +00:00 [INF] Content root path: /app
+2024-10-24 10:08:13.647 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2024-10-24 10:08:14.082 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 437.2891ms
+2024-10-24 10:08:14.677 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2024-10-24 10:08:14.834 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 156.9432ms
+2024-10-24 10:08:18.146 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 10:08:18.161 +00:00 [WRN] Failed to determine the https port for redirect.
+2024-10-24 10:08:18.170 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:08:18.234 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:08:20.627 +00:00 [INF] Executed DbCommand (122ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 10:08:20.702 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 10:08:20.711 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 2469.7657ms
+2024-10-24 10:08:20.714 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:08:20.727 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 2580.4862ms
+2024-10-24 10:08:29.888 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 10:08:29.892 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:08:29.897 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:08:29.948 +00:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 10:08:29.963 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 10:08:29.966 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 66.4612ms
+2024-10-24 10:08:29.968 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:08:29.971 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 82.4994ms
+2024-10-24 10:09:47.791 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 10:09:47.815 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:09:47.848 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:09:47.901 +00:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 10:09:47.915 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 10:09:47.918 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 64.0957ms
+2024-10-24 10:09:47.922 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:09:47.945 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 154.5873ms
+2024-10-24 10:11:16.870 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 10:11:16.928 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:11:16.953 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:11:17.077 +00:00 [INF] Executed DbCommand (68ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 10:11:17.134 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 10:11:17.158 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 200.6638ms
+2024-10-24 10:11:17.161 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:11:17.164 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 295.6854ms
+2024-10-24 10:13:23.213 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 10:13:23.274 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 10:13:23.278 +00:00 [INF] Hosting environment: Development
+2024-10-24 10:13:23.280 +00:00 [INF] Content root path: /app
+2024-10-24 10:13:26.658 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2024-10-24 10:13:26.868 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 211.4587ms
+2024-10-24 10:13:27.337 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2024-10-24 10:13:27.477 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 139.8815ms
+2024-10-24 10:14:45.864 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 10:14:45.877 +00:00 [WRN] Failed to determine the https port for redirect.
+2024-10-24 10:14:45.887 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:14:45.926 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:14:48.319 +00:00 [INF] Executed DbCommand (113ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 10:14:48.373 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 10:14:48.379 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 2443.9672ms
+2024-10-24 10:14:48.383 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:14:48.393 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 2529.6874ms
+2024-10-24 10:15:27.065 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/Report/35699918-2211-44bb-b526-3dd22323a9b0 - null null
+2024-10-24 10:15:27.077 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 10:15:27.098 +00:00 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(System.Guid) on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:15:27.719 +00:00 [INF] Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UUID", r."Data", r."ReportStatus", r."RequestDate"
+FROM "ReportDetails" AS r
+WHERE r."UUID" = @__id_0
+LIMIT 1
+2024-10-24 10:15:27.798 +00:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Neredekal.Rapor.Infrastructure.Persistence.ReportDbContext'.
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method145(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method145(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-10-24 10:15:28.034 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api) in 930.0334ms
+2024-10-24 10:15:28.039 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 10:15:28.045 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method145(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Neredekal.Rapor.Infrastructure.Persistence.Repositories.ReportDetailRepository.Get(Guid id, CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Infrastructure\Persistence\Repositories\ReportDetailRepository.cs:line 28
+   at Neredekal.Rapor.Application.UseCases.RaporUseCases.Queries.GetReportDetailQueryHandler.Handle(GetReportDetailQuery request, CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Application\UseCases\RaporUseCases\Queries\GetReportDetailQuery.cs:line 26
+   at Neredekal.Rapor.Api.Controllers.ReportController.Get(Guid id) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Api\Controllers\ReportController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-24 10:15:28.081 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/Report/35699918-2211-44bb-b526-3dd22323a9b0 - 500 null text/plain; charset=utf-8 1016.504ms
+2024-10-24 10:16:26.163 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 10:16:26.209 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 10:16:26.212 +00:00 [INF] Hosting environment: Development
+2024-10-24 10:16:26.216 +00:00 [INF] Content root path: /app
+2024-10-24 10:16:31.440 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2024-10-24 10:16:31.709 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 270.1789ms
+2024-10-24 10:16:32.229 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2024-10-24 10:16:32.437 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 208.7039ms
+2024-10-24 10:16:38.015 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/Report/35699918-2211-44bb-b526-3dd22323a9b0 - null null
+2024-10-24 10:16:38.029 +00:00 [WRN] Failed to determine the https port for redirect.
+2024-10-24 10:16:38.044 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 10:16:38.095 +00:00 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(System.Guid) on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:16:40.807 +00:00 [INF] Executed DbCommand (122ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UUID", r."Data", r."ReportStatus", r."RequestDate"
+FROM "ReportDetails" AS r
+WHERE r."UUID" = @__id_0
+LIMIT 1
+2024-10-24 10:16:40.897 +00:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Neredekal.Rapor.Infrastructure.Persistence.ReportDbContext'.
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method16(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method16(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-10-24 10:16:41.359 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api) in 3247.2631ms
+2024-10-24 10:16:41.367 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 10:16:41.376 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method16(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Neredekal.Rapor.Infrastructure.Persistence.Repositories.ReportDetailRepository.Get(Guid id, CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Infrastructure\Persistence\Repositories\ReportDetailRepository.cs:line 28
+   at Neredekal.Rapor.Application.UseCases.RaporUseCases.Queries.GetReportDetailQueryHandler.Handle(GetReportDetailQuery request, CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Application\UseCases\RaporUseCases\Queries\GetReportDetailQuery.cs:line 26
+   at Neredekal.Rapor.Api.Controllers.ReportController.Get(Guid id) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Api\Controllers\ReportController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-24 10:16:41.426 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/Report/35699918-2211-44bb-b526-3dd22323a9b0 - 500 null text/plain; charset=utf-8 3411.7901ms
+2024-10-24 10:16:49.367 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/Report/35699918-2211-44bb-b526-3dd22323a9b0 - null null
+2024-10-24 10:16:49.371 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 10:16:49.376 +00:00 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(System.Guid) on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:17:04.100 +00:00 [INF] Executed DbCommand (31ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UUID", r."Data", r."ReportStatus", r."RequestDate"
+FROM "ReportDetails" AS r
+WHERE r."UUID" = @__id_0
+LIMIT 1
+2024-10-24 10:17:04.131 +00:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Neredekal.Rapor.Infrastructure.Persistence.ReportDbContext'.
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method16(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method16(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-10-24 10:17:04.322 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api) in 14943.7886ms
+2024-10-24 10:17:04.327 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 10:17:04.333 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method16(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Neredekal.Rapor.Infrastructure.Persistence.Repositories.ReportDetailRepository.Get(Guid id, CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Infrastructure\Persistence\Repositories\ReportDetailRepository.cs:line 28
+   at Neredekal.Rapor.Application.UseCases.RaporUseCases.Queries.GetReportDetailQueryHandler.Handle(GetReportDetailQuery request, CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Application\UseCases\RaporUseCases\Queries\GetReportDetailQuery.cs:line 26
+   at Neredekal.Rapor.Api.Controllers.ReportController.Get(Guid id) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Api\Controllers\ReportController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-24 10:17:04.349 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/Report/35699918-2211-44bb-b526-3dd22323a9b0 - 500 null text/plain; charset=utf-8 14983.7519ms
+2024-10-24 10:18:48.895 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 10:18:48.935 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 10:18:48.939 +00:00 [INF] Hosting environment: Development
+2024-10-24 10:18:48.942 +00:00 [INF] Content root path: /app
+2024-10-24 10:18:54.014 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2024-10-24 10:18:54.189 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 175.8425ms
+2024-10-24 10:18:54.745 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2024-10-24 10:18:54.956 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 210.8251ms
+2024-10-24 10:19:04.664 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/Report/0e58c1fa-ebf8-48c6-9d72-aa5ff367eb64 - null null
+2024-10-24 10:19:04.681 +00:00 [WRN] Failed to determine the https port for redirect.
+2024-10-24 10:19:04.698 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 10:19:04.753 +00:00 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(System.Guid) on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:19:11.486 +00:00 [INF] Executed DbCommand (165ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UUID", r."Data", r."ReportStatus", r."RequestDate"
+FROM "ReportDetails" AS r
+WHERE r."UUID" = @__id_0
+LIMIT 1
+2024-10-24 10:19:11.592 +00:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Neredekal.Rapor.Infrastructure.Persistence.ReportDbContext'.
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method16(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method16(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-10-24 10:19:11.905 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api) in 7138.1685ms
+2024-10-24 10:19:11.912 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 10:19:11.923 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Column 'Data' is null.
+   at Npgsql.ThrowHelper.ThrowInvalidCastException_NoValue(FieldDescription field)
+   at Npgsql.NpgsqlDataReader.DbNullValueOrThrow[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetFieldValueCore[T](Int32 ordinal)
+   at Npgsql.NpgsqlDataReader.GetString(Int32 ordinal)
+   at lambda_method16(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Neredekal.Rapor.Infrastructure.Persistence.Repositories.ReportDetailRepository.Get(Guid id, CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Infrastructure\Persistence\Repositories\ReportDetailRepository.cs:line 28
+   at Neredekal.Rapor.Application.UseCases.RaporUseCases.Queries.GetReportDetailQueryHandler.Handle(GetReportDetailQuery request, CancellationToken cancellationToken) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Application\UseCases\RaporUseCases\Queries\GetReportDetailQuery.cs:line 26
+   at Neredekal.Rapor.Api.Controllers.ReportController.Get(Guid id) in C:\Users\sefa_\source\repos\Git\Neredekal\src\services\Rapor\Neredekal.Rapor.Api\Controllers\ReportController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-24 10:19:11.972 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/Report/0e58c1fa-ebf8-48c6-9d72-aa5ff367eb64 - 500 null text/plain; charset=utf-8 7308.3152ms
+2024-10-24 10:34:02.696 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 10:34:02.768 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 10:34:02.773 +00:00 [INF] Hosting environment: Development
+2024-10-24 10:34:02.777 +00:00 [INF] Content root path: /app
+2024-10-24 10:37:18.150 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 10:37:18.226 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 10:37:18.230 +00:00 [INF] Hosting environment: Development
+2024-10-24 10:37:18.233 +00:00 [INF] Content root path: /app
+2024-10-24 13:37:50.170 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-10-24 13:37:50.213 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-10-24 13:37:50.294 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2024-10-24 13:37:50.306 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-10-24 13:37:50.309 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-10-24 13:37:50.319 +03:00 [INF] Applying migration '20241024102950_Init'.
+2024-10-24 13:37:50.345 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "OutboxMessage" (
+    "Id" uuid NOT NULL,
+    "Type" text NOT NULL,
+    "Content" text NOT NULL,
+    "CreatedAt" timestamp with time zone NOT NULL,
+    "ProcessedAt" timestamp with time zone,
+    "Error" text,
+    "Status" integer NOT NULL,
+    CONSTRAINT "PK_OutboxMessage" PRIMARY KEY ("Id")
+);
+2024-10-24 13:37:50.347 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ReportDetails" (
+    "UUID" uuid NOT NULL,
+    "RequestDate" timestamp with time zone NOT NULL,
+    "ReportStatus" integer NOT NULL,
+    "Data" text NOT NULL,
+    CONSTRAINT "PK_ReportDetails" PRIMARY KEY ("UUID")
+);
+2024-10-24 13:37:50.348 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20241024102950_Init', '8.0.10');
+2024-10-24 10:41:52.224 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 10:41:52.288 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 10:41:52.293 +00:00 [INF] Hosting environment: Development
+2024-10-24 10:41:52.298 +00:00 [INF] Content root path: /app
+2024-10-24 13:43:07.199 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-10-24 13:43:07.243 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-10-24 13:43:07.315 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2024-10-24 13:43:07.324 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-10-24 13:43:07.327 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-10-24 13:43:07.336 +03:00 [INF] Applying migration '20241024102950_Init'.
+2024-10-24 13:43:07.352 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "OutboxMessage" (
+    "Id" uuid NOT NULL,
+    "Type" text NOT NULL,
+    "Content" text NOT NULL,
+    "CreatedAt" timestamp with time zone NOT NULL,
+    "ProcessedAt" timestamp with time zone,
+    "Error" text,
+    "Status" integer NOT NULL,
+    CONSTRAINT "PK_OutboxMessage" PRIMARY KEY ("Id")
+);
+2024-10-24 13:43:07.354 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ReportDetails" (
+    "UUID" uuid NOT NULL,
+    "RequestDate" timestamp with time zone NOT NULL,
+    "ReportStatus" integer NOT NULL,
+    "Data" text NOT NULL,
+    CONSTRAINT "PK_ReportDetails" PRIMARY KEY ("UUID")
+);
+2024-10-24 13:43:07.355 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20241024102950_Init', '8.0.10');
+2024-10-24 10:43:43.422 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 10:43:43.466 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 10:43:43.469 +00:00 [INF] Hosting environment: Development
+2024-10-24 10:43:43.471 +00:00 [INF] Content root path: /app
+2024-10-24 10:44:02.150 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2024-10-24 10:44:02.354 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 207.9772ms
+2024-10-24 10:44:02.888 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2024-10-24 10:44:03.056 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 168.3107ms
+2024-10-24 10:50:09.521 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 10:50:09.560 +00:00 [WRN] Failed to determine the https port for redirect.
+2024-10-24 10:50:09.576 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:50:09.625 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:50:11.856 +00:00 [INF] Executed DbCommand (95ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 10:50:11.926 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 10:50:11.934 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 2301.204ms
+2024-10-24 10:50:11.937 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:50:11.950 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 2429.5209ms
+2024-10-24 10:51:32.253 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 10:51:32.282 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:51:32.285 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:51:32.399 +00:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 10:51:32.461 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 10:51:32.463 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 176.2427ms
+2024-10-24 10:51:32.488 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:51:32.490 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 236.8783ms
+2024-10-24 10:52:26.808 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/Report/22b8dd05-0ca1-4dde-8346-1e63fcef8218 - null null
+2024-10-24 10:52:26.814 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 10:52:26.836 +00:00 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(System.Guid) on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:52:27.174 +00:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UUID", r."Data", r."ReportStatus", r."RequestDate"
+FROM "ReportDetails" AS r
+WHERE r."UUID" = @__id_0
+LIMIT 1
+2024-10-24 10:52:39.244 +00:00 [INF] Executing OkObjectResult, writing value of type 'Neredekal.Rapor.Application.Wrapper.Result`1[[Neredekal.Rapor.Domain.AggregateModels.RaporModels.ReportDetail, Neredekal.Rapor.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-10-24 10:52:39.311 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api) in 12473.4375ms
+2024-10-24 10:52:39.314 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 10:52:39.319 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/Report/22b8dd05-0ca1-4dde-8346-1e63fcef8218 - 200 null application/json; charset=utf-8 12510.9171ms
+2024-10-24 10:54:53.820 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 10:54:53.863 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 10:54:53.867 +00:00 [INF] Hosting environment: Development
+2024-10-24 10:54:53.870 +00:00 [INF] Content root path: /app
+2024-10-24 10:55:01.822 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2024-10-24 10:55:01.997 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 175.5093ms
+2024-10-24 10:55:02.492 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2024-10-24 10:55:02.612 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 119.7908ms
+2024-10-24 10:55:06.920 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 10:55:06.933 +00:00 [WRN] Failed to determine the https port for redirect.
+2024-10-24 10:55:06.942 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:55:06.978 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:55:09.145 +00:00 [INF] Executed DbCommand (69ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 10:55:09.204 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 10:55:09.210 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 2224.1984ms
+2024-10-24 10:55:09.213 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:55:09.228 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 2307.6581ms
+2024-10-24 10:57:05.985 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 10:57:05.992 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:57:06.006 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:57:06.174 +00:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 10:57:06.193 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 10:57:06.197 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 187.4222ms
+2024-10-24 10:57:06.200 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 10:57:06.204 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 218.9841ms
+2024-10-24 10:59:00.506 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/Report/ecb81840-1237-4e9d-a03e-7d9f68f92350 - null null
+2024-10-24 10:59:00.511 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 10:59:00.532 +00:00 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(System.Guid) on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 10:59:46.718 +00:00 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UUID", r."Data", r."ReportStatus", r."RequestDate"
+FROM "ReportDetails" AS r
+WHERE r."UUID" = @__id_0
+LIMIT 1
+2024-10-24 11:00:00.212 +00:00 [INF] Executing OkObjectResult, writing value of type 'Neredekal.Rapor.Application.Wrapper.Result`1[[Neredekal.Rapor.Domain.AggregateModels.RaporModels.ReportDetail, Neredekal.Rapor.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-10-24 11:00:00.256 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api) in 59725.1732ms
+2024-10-24 11:00:00.264 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 11:00:00.269 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/Report/ecb81840-1237-4e9d-a03e-7d9f68f92350 - 200 null application/json; charset=utf-8 59766.8652ms
+2024-10-24 11:00:27.590 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 11:00:27.594 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 11:00:27.601 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 11:00:27.620 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 11:00:27.642 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 11:00:27.647 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 42.6047ms
+2024-10-24 11:00:27.650 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 11:00:27.655 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 63.7527ms
+2024-10-24 11:07:17.833 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/Report/ecb81840-1237-4e9d-a03e-7d9f68f92350 - null null
+2024-10-24 11:07:17.859 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 11:07:17.862 +00:00 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(System.Guid) on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 11:07:22.428 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UUID", r."Data", r."ReportStatus", r."RequestDate"
+FROM "ReportDetails" AS r
+WHERE r."UUID" = @__id_0
+LIMIT 1
+2024-10-24 11:07:27.811 +00:00 [INF] Executing OkObjectResult, writing value of type 'Neredekal.Rapor.Application.Wrapper.Result`1[[Neredekal.Rapor.Domain.AggregateModels.RaporModels.ReportDetail, Neredekal.Rapor.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-10-24 11:07:27.844 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api) in 9979.662ms
+2024-10-24 11:07:27.887 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 11:07:27.894 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/Report/ecb81840-1237-4e9d-a03e-7d9f68f92350 - 200 null application/json; charset=utf-8 10062.4794ms
+2024-10-24 11:10:52.752 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 11:10:52.793 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 11:10:52.796 +00:00 [INF] Hosting environment: Development
+2024-10-24 11:10:52.800 +00:00 [INF] Content root path: /app
+2024-10-24 11:10:56.607 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2024-10-24 11:10:56.802 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 197.9461ms
+2024-10-24 11:10:57.317 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2024-10-24 11:10:57.470 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 149.5427ms
+2024-10-24 11:11:10.779 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 11:11:10.796 +00:00 [WRN] Failed to determine the https port for redirect.
+2024-10-24 11:11:10.806 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 11:11:10.870 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 11:11:13.197 +00:00 [INF] Executed DbCommand (142ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 11:11:13.287 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 11:11:13.293 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 2416.1046ms
+2024-10-24 11:11:13.297 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 11:11:13.312 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 2533.3217ms
+2024-10-24 11:16:35.069 +00:00 [INF] Now listening on: http://[::]:5002
+2024-10-24 11:16:35.126 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-24 11:16:35.130 +00:00 [INF] Hosting environment: Development
+2024-10-24 11:16:35.133 +00:00 [INF] Content root path: /app
+2024-10-24 11:16:44.394 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - null null
+2024-10-24 11:16:44.521 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - 200 null text/html;charset=utf-8 130.2527ms
+2024-10-24 11:16:44.962 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2024-10-24 11:16:45.122 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 159.7304ms
+2024-10-24 11:16:48.205 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/Report - null 0
+2024-10-24 11:16:48.216 +00:00 [WRN] Failed to determine the https port for redirect.
+2024-10-24 11:16:48.230 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 11:16:48.260 +00:00 [INF] Route matched with {action = "Create", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 11:16:50.329 +00:00 [INF] Executed DbCommand (70ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?', @p7='?' (DbType = Guid), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OutboxMessage" ("Id", "Content", "CreatedAt", "Error", "ProcessedAt", "Status", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO "ReportDetails" ("UUID", "Data", "ReportStatus", "RequestDate")
+VALUES (@p7, @p8, @p9, @p10);
+2024-10-24 11:16:50.398 +00:00 [INF] Executing AcceptedResult, writing value of type 'null'.
+2024-10-24 11:16:50.408 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api) in 2139.2608ms
+2024-10-24 11:16:50.416 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Create (Neredekal.Rapor.Api)'
+2024-10-24 11:16:50.431 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/Report - 202 0 null 2226.6241ms
+2024-10-24 11:17:55.649 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/Report - null null
+2024-10-24 11:17:55.654 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.GetAll (Neredekal.Rapor.Api)'
+2024-10-24 11:17:55.668 +00:00 [INF] Route matched with {action = "GetAll", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 11:17:56.229 +00:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UUID", r."Data", r."ReportStatus", r."RequestDate"
+FROM "ReportDetails" AS r
+2024-10-24 11:17:56.278 +00:00 [INF] Executing OkObjectResult, writing value of type 'Neredekal.Rapor.Application.Wrapper.Result`1[[System.Collections.Generic.List`1[[Neredekal.Rapor.Application.UseCases.RaporUseCases.Responses.GetAllReportResponse, Neredekal.Rapor.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-10-24 11:17:56.329 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.GetAll (Neredekal.Rapor.Api) in 657.3698ms
+2024-10-24 11:17:56.335 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.GetAll (Neredekal.Rapor.Api)'
+2024-10-24 11:17:56.340 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/Report - 200 null application/json; charset=utf-8 690.4829ms
+2024-10-24 11:18:12.626 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/Report/72a2e82c-dabd-4362-aedc-c303e2b8b10c - null null
+2024-10-24 11:18:12.630 +00:00 [INF] Executing endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 11:18:12.652 +00:00 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(System.Guid) on controller Neredekal.Rapor.Api.Controllers.ReportController (Neredekal.Rapor.Api).
+2024-10-24 11:18:19.896 +00:00 [INF] Executed DbCommand (27ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UUID", r."Data", r."ReportStatus", r."RequestDate"
+FROM "ReportDetails" AS r
+WHERE r."UUID" = @__id_0
+LIMIT 1
+2024-10-24 11:18:19.913 +00:00 [INF] Executing OkObjectResult, writing value of type 'Neredekal.Rapor.Application.Wrapper.Result`1[[Neredekal.Rapor.Domain.AggregateModels.RaporModels.ReportDetail, Neredekal.Rapor.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-10-24 11:18:19.922 +00:00 [INF] Executed action Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api) in 7265.9742ms
+2024-10-24 11:18:19.926 +00:00 [INF] Executed endpoint 'Neredekal.Rapor.Api.Controllers.ReportController.Get (Neredekal.Rapor.Api)'
+2024-10-24 11:18:19.932 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/api/Report/72a2e82c-dabd-4362-aedc-c303e2b8b10c - 200 null application/json; charset=utf-8 7305.9312ms

@@ -20,7 +20,7 @@ namespace Neredekal.Hotel.Insfrastructure.Persistence.Configurations
 
             builder.Property(x => x.HotelId).IsRequired();
             builder.HasOne(x => x.Hotel).WithMany(x => x.HotelContactInfoItems).HasForeignKey(x => x.HotelId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.ClientCascade);
         }
     }
 }

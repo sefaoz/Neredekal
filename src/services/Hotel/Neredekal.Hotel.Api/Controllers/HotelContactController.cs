@@ -15,7 +15,7 @@ namespace Neredekal.Hotel.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost("Create")]
+        [HttpPost]
         public async Task<IActionResult> Create(CreateHotelContactCommand command)
         {
             await _mediator.Send(command);

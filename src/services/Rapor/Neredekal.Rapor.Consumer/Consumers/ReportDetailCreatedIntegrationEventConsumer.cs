@@ -24,9 +24,8 @@ namespace Neredekal.Rapor.Consumer.Consumers
             {
                 var data = result.Content;
 
-                var reportDetail = await _repository.Get(context.Message.Id);
+                var reportDetail = await _repository.Get(context.Message.Id, context.CancellationToken);
 
-                //Json serilaze edilecek.
                 reportDetail.SetStatusCompleted(await data.ReadAsStringAsync());
 
                 await _repository.SaveChangesAsync();

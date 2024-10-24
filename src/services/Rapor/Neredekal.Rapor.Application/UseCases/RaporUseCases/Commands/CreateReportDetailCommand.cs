@@ -25,12 +25,12 @@ namespace Neredekal.Rapor.Application.UseCase.RaporUseCases.Commands
 
         public async Task Handle(CreateReportDetailCommand request, CancellationToken cancellationToken)
         {
-            var report = ReportDetail.CreateReportDetail(Guid.NewGuid(), null);
-            await _repository.Create(report);
+            var report = ReportDetail.CreateReportDetail(Guid.NewGuid(),"");
+            await _repository.Create(report, cancellationToken);
 
             var @event = new ReportDetailCreatedIntegrationEvent(report.UUID);
 
-            report.AddDomainEvents(new CreateOutboxMessageDomainEvent(@event.GetType().AssemblyQualifiedName,System.Text.Json.JsonSerializer.Serialize(@event)));
+            report.AddDomainEvents(new CreateOutboxMessageDomainEvent(@event.GetType().AssemblyQualifiedName, System.Text.Json.JsonSerializer.Serialize(@event)));
 
             await _repository.SaveChangesAsync(cancellationToken);
         }

@@ -10,7 +10,8 @@ namespace Neredekal.Rapor.Application.Abstractions.Repositories
 {
     public interface IReportDetailRepository : IUnitOfWorks
     {
-        Task Create(ReportDetail reportDetail);
-        Task<ReportDetail> Get(Guid id);
+        Task Create(ReportDetail reportDetail, CancellationToken cancellationToken);
+        Task<ReportDetail> Get(Guid id,CancellationToken cancellationToken);
+        Task<List<ReportDetail>> GetAll(CancellationToken cancellationToken);
     }
 }
